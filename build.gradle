@@ -1,0 +1,36 @@
+buildscript {
+    ext {
+        //Sdk and tools
+        compileSdkVersion = 28
+        minSdkVersion = 19
+        targetSdkVersion = 28
+
+        //Dependencies
+        constraintLayoutVersion = '2.0.0-alpha2'
+        coreTestingVersion = '2.0.0'
+        espressoVersion = '3.1.0-alpha4'
+        junitVersion = '4.12'
+        kotlin_version = '1.2.71'
+        supportLibraryVersion = '1.0.2'
+        uiAutomatorVersion = '2.2.0-alpha4'
+    }
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.2.1'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
